@@ -1,0 +1,127 @@
+{
+  "generated_at": "2026-06-15T15:30:53.264531+00:00",
+  "llm_configured": false,
+  "document_count": 20,
+  "results": [
+    {
+      "question": "How do I read a CSV file in pandas?",
+      "status_code": 200,
+      "mode": "retrieval_only",
+      "answer": "Use pandas.read_csv(). Example: import pandas as pd; df = pd.read_csv('data.csv'). For large files, pass usecols or chunksize.",
+      "top_source": {
+        "title": "How to read a CSV file in pandas?",
+        "score": 0.9772,
+        "excerpt": "Title: How to read a CSV file in pandas?\nQuestion: I have a CSV file and want to load it into a DataFrame. What is the standard way?\nTags: python, pandas, csv\nAnswer: Use pandas.read_csv(). Example: import pandas as pd; df = pd.read_csv('data.csv'). For large files, pass usecols or chunksize."
+      },
+      "observation": "Retrieval-only mode (no LLM key). Answer grounded in top Stack Overflow match."
+    },
+    {
+      "question": "What is the difference between a list and a tuple?",
+      "status_code": 200,
+      "mode": "retrieval_only",
+      "answer": "Lists are mutable and use square brackets []. Tuples are immutable and use parentheses (). Use tuples for fixed collections and as dict keys when needed.",
+      "top_source": {
+        "title": "Difference between list and tuple in Python",
+        "score": 0.9809,
+        "excerpt": "Title: Difference between list and tuple in Python\nQuestion: When should I use a list vs a tuple?\nTags: python, list, tuple\nAnswer: Lists are mutable and use square brackets []. Tuples are immutable and use parentheses (). Use tuples for fixed collections and as dict keys when needed."
+      },
+      "observation": "Retrieval-only mode (no LLM key). Answer grounded in top Stack Overflow match."
+    },
+    {
+      "question": "How can I handle missing values in a DataFrame?",
+      "status_code": 200,
+      "mode": "retrieval_only",
+      "answer": "Detect with df.isna() or df.isnull(). Drop rows with df.dropna() or fill with df.fillna(value). For numeric columns, df.fillna(df.mean()) is common.",
+      "top_source": {
+        "title": "How to handle missing values in pandas?",
+        "score": 0.9741,
+        "excerpt": "Title: How to handle missing values in pandas?\nQuestion: My dataset has NaN values. How do I detect and fill them?\nTags: python, pandas, missing-data\nAnswer: Detect with df.isna() or df.isnull(). Drop rows with df.dropna() or fill with df.fillna(value). For numeric columns, df.fillna(df.mean()) is common."
+      },
+      "observation": "Retrieval-only mode (no LLM key). Answer grounded in top Stack Overflow match."
+    },
+    {
+      "question": "Explain Python list comprehensions with an example.",
+      "status_code": 200,
+      "mode": "retrieval_only",
+      "answer": "A list comprehension creates a list in one line: squares = [x**2 for x in range(10)]. You can add filters: evens = [x for x in range(10) if x % 2 == 0].",
+      "top_source": {
+        "title": "What is a Python list comprehension?",
+        "score": 0.9732,
+        "excerpt": "Title: What is a Python list comprehension?\nQuestion: Can someone explain list comprehensions with an example?\nTags: python, list-comprehension\nAnswer: A list comprehension creates a list in one line: squares = [x**2 for x in range(10)]. You can add filters: evens = [x for x in range(10) if x % 2 == 0]."
+      },
+      "observation": "Retrieval-only mode (no LLM key). Answer grounded in top Stack Overflow match."
+    },
+    {
+      "question": "How do I merge two DataFrames on a common key?",
+      "status_code": 200,
+      "mode": "retrieval_only",
+      "answer": "Use pd.merge(left, right, on='key', how='inner'). Other join types: left, right, outer. For index-based joins, use df.join().",
+      "top_source": {
+        "title": "How to merge two DataFrames in pandas?",
+        "score": 0.9827,
+        "excerpt": "Title: How to merge two DataFrames in pandas?\nQuestion: I have two tables with a common key. How do I join them?\nTags: python, pandas, merge\nAnswer: Use pd.merge(left, right, on='key', how='inner'). Other join types: left, right, outer. For index-based joins, use df.join()."
+      },
+      "observation": "Retrieval-only mode (no LLM key). Answer grounded in top Stack Overflow match."
+    },
+    {
+      "question": "What does if __name__ == '__main__' do?",
+      "status_code": 200,
+      "mode": "retrieval_only",
+      "answer": "It runs code only when the file is executed directly, not when imported as a module. It keeps reusable modules clean and enables script entry points.",
+      "top_source": {
+        "title": "What does if __name__ == '__main__' mean?",
+        "score": 0.9542,
+        "excerpt": "Title: What does if __name__ == '__main__' mean?\nQuestion: Why do Python scripts include this block?\nTags: python, modules\nAnswer: It runs code only when the file is executed directly, not when imported as a module. It keeps reusable modules clean and enables script entry points."
+      },
+      "observation": "Retrieval-only mode (no LLM key). Answer grounded in top Stack Overflow match."
+    },
+    {
+      "question": "How do I create and use a virtual environment?",
+      "status_code": 200,
+      "mode": "retrieval_only",
+      "answer": "Run python -m venv .venv, activate it, then pip install -r requirements.txt. Virtual environments prevent dependency conflicts between projects.",
+      "top_source": {
+        "title": "How to create a virtual environment?",
+        "score": 0.965,
+        "excerpt": "Title: How to create a virtual environment?\nQuestion: What is the recommended way to isolate project dependencies?\nTags: python, venv\nAnswer: Run python -m venv .venv, activate it, then pip install -r requirements.txt. Virtual environments prevent dependency conflicts between projects."
+      },
+      "observation": "Retrieval-only mode (no LLM key). Answer grounded in top Stack Overflow match."
+    },
+    {
+      "question": "How do I train-test split data with scikit-learn?",
+      "status_code": 200,
+      "mode": "retrieval_only",
+      "answer": "from sklearn.model_selection import train_test_split; X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42).",
+      "top_source": {
+        "title": "How to train-test split with scikit-learn?",
+        "score": 0.9773,
+        "excerpt": "Title: How to train-test split with scikit-learn?\nQuestion: I need separate training and test sets.\nTags: python, scikit-learn\nAnswer: from sklearn.model_selection import train_test_split; X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)."
+      },
+      "observation": "Retrieval-only mode (no LLM key). Answer grounded in top Stack Overflow match."
+    },
+    {
+      "question": "How do I sort a list in Python?",
+      "status_code": 200,
+      "mode": "retrieval_only",
+      "answer": "list.sort() sorts in place and returns None. sorted(list) returns a new sorted list. Use key= for custom sorting, e.g. sorted(items, key=len).",
+      "top_source": {
+        "title": "How to sort a list in Python?",
+        "score": 0.9716,
+        "excerpt": "Title: How to sort a list in Python?\nQuestion: What is the difference between sort() and sorted()?\nTags: python, sorting\nAnswer: list.sort() sorts in place and returns None. sorted(list) returns a new sorted list. Use key= for custom sorting, e.g. sorted(items, key=len)."
+      },
+      "observation": "Retrieval-only mode (no LLM key). Answer grounded in top Stack Overflow match."
+    },
+    {
+      "question": "What is a decorator in Python?",
+      "status_code": 200,
+      "mode": "retrieval_only",
+      "answer": "A decorator wraps a function to extend behavior without changing its code. Example: @timer above def work(): .... Decorators are functions that return functions.",
+      "top_source": {
+        "title": "What is a Python decorator?",
+        "score": 0.9766,
+        "excerpt": "Title: What is a Python decorator?\nQuestion: How do decorators work?\nTags: python, decorators\nAnswer: A decorator wraps a function to extend behavior without changing its code. Example: @timer above def work(): .... Decorators are functions that return functions."
+      },
+      "observation": "Retrieval-only mode (no LLM key). Answer grounded in top Stack Overflow match."
+    }
+  ]
+}

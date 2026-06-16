@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Q&A Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-icon">{ }</div>
+          <div>
+            <h1>Python Q&A</h1>
+            <p>Stack Overflow–grounded tutor</p>
+          </div>
+        </div>
+
+        <section class="status-card" id="statusCard">
+          <h2>System status</h2>
+          <div class="status-grid">
+            <div class="status-item">
+              <span>API</span>
+              <strong id="statusApi">Checking…</strong>
+            </div>
+            <div class="status-item">
+              <span>Index</span>
+              <strong id="statusIndex">—</strong>
+            </div>
+            <div class="status-item">
+              <span>LLM</span>
+              <strong id="statusLlm">—</strong>
+            </div>
+            <div class="status-item">
+              <span>Documents</span>
+              <strong id="statusDocs">—</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="examples">
+          <h2>Try asking</h2>
+          <div class="example-list" id="exampleList"></div>
+        </section>
+      </aside>
+
+      <main class="chat">
+        <header class="chat-header">
+          <div>
+            <h2>Ask a Python question</h2>
+            <p>Get grounded answers for data science learners</p>
+          </div>
+          <button class="ghost-btn" id="clearBtn" type="button">Clear chat</button>
+        </header>
+
+        <div class="messages" id="messages">
+          <article class="message assistant welcome">
+            <div class="avatar">Py</div>
+            <div class="bubble">
+              <p>
+                Hi! I answer Python and data-science questions using retrieved Stack Overflow
+                context. Ask anything about pandas, NumPy, scikit-learn, or core Python.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <form class="composer" id="askForm">
+          <label class="sr-only" for="questionInput">Your question</label>
+          <textarea
+            id="questionInput"
+            rows="2"
+            placeholder="e.g. How do I read a CSV file in pandas?"
+            maxlength="2000"
+            required
+          ></textarea>
+          <button class="send-btn" id="sendBtn" type="submit">
+            <span>Ask</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3.4 20.6 21 12 3.4 3.4l2.8 7.2L17 12l-10.8 1.4-2.8 7.2z" />
+            </svg>
+          </button>
+        </form>
+      </main>
+    </div>
+
+    <template id="messageTemplate">
+      <article class="message">
+        <div class="avatar"></div>
+        <div class="bubble">
+          <p class="message-text"></p>
+          <div class="sources hidden"></div>
+          <div class="meta hidden"></div>
+        </div>
+      </article>
+    </template>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>
