@@ -2,6 +2,16 @@
 
 AI-powered FastAPI service that answers Python questions using a retrieval-augmented generation (RAG) pipeline grounded in Stack Overflow Python Q&A data.
 
+## Live Demo
+
+| Service | URL |
+|---------|-----|
+| **Frontend (chat UI)** | [https://ai-codeassit-1.onrender.com/](https://ai-codeassit-1.onrender.com/) |
+| **Backend API** | [https://ai-codeassit.onrender.com/](https://ai-codeassit.onrender.com/) |
+| **API Docs (Swagger)** | [https://ai-codeassit.onrender.com/docs](https://ai-codeassit.onrender.com/docs) |
+| **API Docs (JSON)** | [https://ai-codeassit.onrender.com/api/docs](https://ai-codeassit.onrender.com/api/docs) |
+| **Health Check** | [https://ai-codeassit.onrender.com/health](https://ai-codeassit.onrender.com/health) |
+
 ## Features
 
 - RAG pipeline with LangChain, Pinecone, and configurable embeddings
@@ -69,6 +79,29 @@ npm start
 Open the app at `http://localhost:3000`. The Node server proxies `/api/health` and `/api/ask` to the FastAPI backend.
 
 ## API
+
+### Documentation
+
+| URL | Description |
+|-----|-------------|
+| `/docs` | Interactive Swagger UI |
+| `/redoc` | ReDoc documentation |
+| `/openapi.json` | OpenAPI schema (JSON) |
+| `/api/docs` | API overview (JSON) |
+| `/` | Quick links to all endpoints |
+
+### `GET /api/docs`
+
+```json
+{
+  "name": "Python Programming Q&A Assistant",
+  "version": "1.0.0",
+  "swagger_ui": "/docs",
+  "redoc": "/redoc",
+  "openapi_schema": "/openapi.json",
+  "endpoints": [...]
+}
+```
 
 ### `GET /health`
 
@@ -139,6 +172,15 @@ See `test_results/TEST_RESULTS.md` for evaluation notes.
 
 ## Deployment
 
+### Render (deployed)
+
+| Service | URL |
+|---------|-----|
+| Frontend | https://ai-codeassit-1.onrender.com |
+| Backend | https://ai-codeassit.onrender.com |
+
+Frontend env: `API_BASE_URL=https://ai-codeassit.onrender.com`
+
 ### Docker
 
 ```bash
@@ -154,7 +196,7 @@ docker run -p 8000:8000 --env-file .env python-qa-assistant
 - Set `PINECONE_API_KEY` and related settings from `.env.example`
 - Persist vectors in your Pinecone index (no local vector DB volume needed)
 
-**Deployed App URL (bonus):** add your live URL here after deployment.
+**Deployed App URL:** https://ai-codeassit-1.onrender.com
 
 ## Project Structure
 

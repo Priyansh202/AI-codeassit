@@ -23,3 +23,19 @@ class HealthResponse(BaseModel):
     index_ready: bool
     llm_configured: bool
     document_count: int
+
+
+class EndpointDoc(BaseModel):
+    method: str
+    path: str
+    description: str
+
+
+class DocsResponse(BaseModel):
+    name: str
+    version: str
+    description: str
+    swagger_ui: str
+    redoc: str
+    openapi_schema: str
+    endpoints: list[EndpointDoc]

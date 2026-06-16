@@ -4,7 +4,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import get_settings
-from app.models.schemas import AskRequest, AskResponse, HealthResponse
+from app.models.schemas import AskRequest, AskResponse, DocsResponse, EndpointDoc, HealthResponse
 from app.rag.pipeline import RAGPipeline
 
 settings = get_settings()
@@ -35,6 +35,59 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+def _api_docs() -> DocsResponse:
+    return DocsResponse(
+        name="Python Programming Q&A Assistant",
+        version="1.0.0",
+        description="RAG-powered API for grounded Python answers using Stack Overflow Q&A.",
+        swagger_ui="/docs",
+        redoc="/redoc",
+        openapi_schema="/openapi.json",
+        endpoints=[
+            EndpointDoc(
+                method="GET",
+                path="/",
+                description="API overview and documentation links.",
+            ),
+            EndpointDoc(
+                method="GET",
+                path="/api/docs",
+                description="Machine-readable API documentation.",
+            ),
+            EndpointDoc(
+                method="GET",
+                path="/health",
+                description="Service health, index status, and document count.",
+            ),
+            EndpointDoc(
+                method="POST",
+                path="/ask",
+                description="Submit a Python question and receive a grounded answer with sources.",
+            ),
+        ],
+    )
+
+
+@app.get("/")
+async def root() -> dict:
+    docs = _api_docs()
+    return {
+        "message": docs.name,
+        "version": docs.version,
+        "docs": docs.swagger_ui,
+        "redoc": docs.redoc,
+        "openapi": docs.openapi_schema,
+        "api_docs": "/api/docs",
+        "health": "/health",
+        "ask": "/ask",
+    }
+
+
+@app.get("/api/docs", response_model=DocsResponse)
+async def api_docs() -> DocsResponse:
+    return _api_docs()
 
 
 @app.get("/health", response_model=HealthResponse)
